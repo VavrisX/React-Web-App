@@ -1,10 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-// router library to simulate backend
+//import { HashRouter as Router, Route } from 'react-router-dom';
+// router to simulate backend
+import { HashRouter, Route } from "react-router-dom";
+
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import About from './components/pages/About';
-// import uuid from 'uuid';
+
 import './App.css';
 import Header from './components/layout/Header';
 import axios from 'axios'; // backend library
@@ -50,7 +52,7 @@ class App extends React.Component {
 
     render() {
       return (
-        <Router>
+        <HashRouter>
           <div className="App">
             <div className='container'>
               <Header/>
@@ -64,7 +66,7 @@ class App extends React.Component {
               <Route path="/About" component = {About}/>
              </div> 
             </div>
-          </Router>
+          </HashRouter>
     );
   }
 }
